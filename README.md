@@ -1,43 +1,65 @@
+> # Team Genesis 😈
 
+# Contribution Guide
 
+### Alur Persiapan
 
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+1. `git clone https://github.com/adeprastya/<nama-repo>.git`
+2. `cd <nama-repo>`
+3. `git remote -v` Pastikan remote sesuai dengan repo github
+4. `npm i`
+5. `npm run dev` Pastikan server sukses berjalan
 
-## Getting Started
+### Alur Kerja Kontribusi
 
-First, run the development server:
+1. Pastikan berada di branch main `git branch` contoh output `main *` (branch aktif terdapat ` *`)
+2. Sinkronisasi perubahan di main `git pull origin main`
+3. Buat branch baru `git switch -c <nama-branch>` contoh: `git switch -c section-1`
+4. Pastikan berada di branch baru `git branch` contoh output `section-1 *` (branch aktif terdapat ` *`)
+5. Lakukan perubahan pada kode
+6. Commit & push
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- `git add .`
+- `git commit -m "<pesan commit>"` contoh: `git commit -m "add first section"`
+- `git push origin <nama-branch>`
+- `git log -5 --oneline --graph` (Optional) untuk verifikasi push
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+7. Tunggu di review & merge oleh koordinator
+8. Ulangi proses ini untuk setiap perubahan baru yang ingin dikembangkan
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+# Current Task Division
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+- ADE - `Section 1`
+  ![Section Ade](./docs/img/sec1.png)
+- BIMA - `Section 2`, `Section 4`
+  ![Section Bima](./docs/img/sec2.png)
+  ![Section Bima](./docs/img/sec4.png)
+- RAKA - `Section 3`
+  ![Section Raka](./docs/img/sec3.png)
+- RENA - `Section 4`, `Section 5`
+  ![Section Rena](./docs/img/sec5.png)
+  ![Section Rena](./docs/img/sec6.png)
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+# Current Next.js Set Up
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- What is your project named? ... `betulin`
+- Would you like to use TypeScript? ... `No`
+- Would you like to use ESLint? ... `Yes`
+- Would you like to use Tailwind CSS? ... `Yes`
+- Would you like your code inside a `src/` directory? ... `Yes`
+- Would you like to use App Router? (recommended) ... `No`
+- Would you like to use Turbopack for `next dev`? ... `Yes`
+- Would you like to customize the import alias (`@/*` by default)? ... `Yes`
+- What import alias would you like configured? ... `@/\*`
 
-## Learn More
+# Tech Used Plan
 
-To learn more about Next.js, take a look at the following resources:
+- Node ^22
+- Next.js (Pages router)
+- Tailwind v4
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+> # Thank You! ✌️
