@@ -4,8 +4,8 @@
 
 ### Alur Persiapan
 
-1. `git clone https://github.com/adeprastya/<nama-repo>.git`
-2. `cd <nama-repo>`
+1. `git clone https://github.com/FlyHigh404/team-genesis.git`
+2. `cd team-genesis`
 3. `git remote -v` Pastikan remote sesuai dengan repo github
 4. `npm i`
 5. `npm run dev` Pastikan server sukses berjalan
