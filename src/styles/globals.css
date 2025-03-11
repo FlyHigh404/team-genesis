@@ -1,26 +1,68 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+	--background-1: #fcfcfc;
+
+	--foreground-1: #1c1c1c;
+	--foreground-2: #6d706e;
+
+	--primary-light-1: #e6faf4;
+	--primary-light-2: #d9f7ef;
+	--primary-light-3: #b0eede;
+	--primary-normal-1: #01c994;
+	--primary-normal-2: #01b585;
+	--primary-normal-3: #01a176;
+	--primary-dark-1: #01976f;
+	--primary-dark-2: #017959;
+	--primary-dark-3: #005a43;
+	--primary-darker-1: #004634;
 }
+/* @media (prefers-color-scheme: dark) {
+	:root {
+		--background-1: #1c1c1c;
+
+		--foreground-1: #fcfcfc;
+		--foreground-2: #d9d9d9;
+	}
+} */
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+	--color-background-1: var(--background-1);
+
+	--color-foreground-1: var(--foreground-1);
+	--color-foreground-2: var(--foreground-2);
+
+	--color-primary-l1: var(--primary-light-1);
+	--color-primary-l2: var(--primary-light-2);
+	--color-primary-l3: var(--primary-light-3);
+	--color-primary-n1: var(--primary-normal-1);
+	--color-primary-n2: var(--primary-normal-2);
+	--color-primary-n3: var(--primary-normal-3);
+	--color-primary-d1: var(--primary-dark-1);
+	--color-primary-d2: var(--primary-dark-2);
+	--color-primary-d3: var(--primary-dark-3);
+	--color-primary-d4: var(--primary-darker-1);
+
+	--font-sans: var(--font-geist-sans);
+	--font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+/* Apply Style */
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+	background: var(--background-1);
+	color: var(--foreground-1);
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+._text-title-1 {
+	@apply font-semibold text-[32px] lg:text-[42px] text-foreground-1;
+}
+._text-body-1 {
+	@apply text-[18px] lg:text-[20px];
+}
+._text-body-2 {
+	@apply text-[16px] lg:text-[16px];
+}
+._text-body-3 {
+	@apply text-[14px] lg:text-[14px];
 }
