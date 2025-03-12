@@ -17,14 +17,15 @@
 	--primary-dark-3: #005a43;
 	--primary-darker-1: #004634;
 }
-/* @media (prefers-color-scheme: dark) {
-	:root {
-		--background-1: #1c1c1c;
 
-		--foreground-1: #fcfcfc;
-		--foreground-2: #d9d9d9;
-	}
-} */
+[data-theme="dark"] {
+	--background-1: #1c1c1c;
+	--foreground-1: #fcfcfc;
+
+	--foreground-2: #d9d9d9;
+}
+
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
 @theme inline {
 	--color-background-1: var(--background-1);

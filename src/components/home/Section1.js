@@ -1,3 +1,5 @@
+"use server";
+
 import Image from "next/image";
 import PlacehoderImage from "@/../docs/img/sec1.png";
 import Button from "@/components/atoms/Button";
@@ -32,7 +34,10 @@ export default function Section1() {
 						Cari bengkel terpercaya, beli sparepart ORI, atur jadwal servis, serta rekomendasi perawatan sesuai budget
 						untuk kondisi EV dan keuangan kamu, serta fitur lain <span className="font-bold">tanpa ribet!</span>
 					</p>
-					<Button type="button" className="mt-2 shadow-md _text-body-2 font-semibold tracking-wide text-primary-n1">
+					<Button
+						type="button"
+						className="mt-4 mb-8 shadow-md dark:border-2 border-foreground-1/50 _text-body-2 font-semibold tracking-wide text-primary-n1"
+					>
 						@ Explore Now!
 					</Button>
 				</div>
@@ -67,14 +72,14 @@ export default function Section1() {
 					</div>
 
 					<div className="absolute top-[15%] left-0 -translate-x-full z-20 flex items-center">
-						<div className="w-44 p-4 rounded-2xl shadow-md bg-background-1 text-primary-n1 _text-body-2 leading-tight">
+						<div className="w-44 p-4 rounded-2xl shadow-md dark:border-2 border-foreground-1/50 bg-background-1 text-primary-n1 _text-body-2 leading-tight">
 							<span>@</span>
 							<p>Teknisi profesional siap siaga untuk bantu kamu.</p>
 						</div>
 						<div className="w-fit">----------------------</div>
 					</div>
 					<div className="absolute bottom-[15%] left-0 -translate-x-full z-20 flex items-center">
-						<div className="w-44 p-4 rounded-2xl shadow-md bg-primary-n2 text-background-1 _text-body-2 leading-tight">
+						<div className="w-44 p-4 rounded-2xl shadow-md dark:border-2 border-foreground-1/50 bg-primary-n2 text-background-1 _text-body-2 leading-tight">
 							<span>@</span>
 							<p>Jaminan kualitas dengan suku cadang ORI.</p>
 						</div>
@@ -82,14 +87,14 @@ export default function Section1() {
 					</div>
 					<div className="absolute top-[-3%] right-[29%] translate-x-full z-20 flex items-center">
 						<div className="h-fit w-max">----------------------------------------</div>
-						<div className="w-44 p-4 rounded-2xl shadow-md bg-primary-n2 text-background-1 _text-body-2 leading-tight">
+						<div className="w-44 p-4 rounded-2xl shadow-md dark:border-2 border-foreground-1/50 bg-primary-n2 text-background-1 _text-body-2 leading-tight">
 							<span>@</span>
 							<p>Nikmati berbagai kemudahan dalam satu platform.</p>
 						</div>
 					</div>
 					<div className="absolute bottom-[20%] right-0 translate-x-full z-20 flex items-center">
 						<div className="h-fit w-max">---------------------</div>
-						<div className="w-44 p-4 rounded-2xl shadow-md bg-background-1 text-primary-n1 _text-body-2 leading-tight">
+						<div className="w-44 p-4 rounded-2xl shadow-md dark:border-2 border-foreground-1/50 bg-background-1 text-primary-n1 _text-body-2 leading-tight">
 							<span>@</span>
 							<p>Pelacakan real-time siap bantu kamu setiap saat.</p>
 						</div>
