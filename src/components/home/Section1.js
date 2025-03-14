@@ -1,32 +1,70 @@
 "use server";
 
 import Image from "next/image";
-import PlacehoderImage from "@/../docs/img/sec1.png";
 import Button from "@/components/atoms/Button";
+
+import HeroImage from "@/assets/images/home-hero.png";
+import Mockup1Image from "@/assets/images/mockup1.png";
+import Mockup2Image from "@/assets/images/mockup2.png";
+import Mockup3Image from "@/assets/images/mockup3.png";
+
+import FlashSvg from "@/assets/svgs/Flash1";
+import SettingSvg from "@/assets/svgs/Setting2";
+import ProfileSvg from "@/assets/svgs/Profile2User";
+import DiscountSvg from "@/assets/svgs/DiscountShape";
+import ForwardSvg from "@/assets/svgs/Forward";
+import MedalStarSvg from "@/assets/svgs/MedalStar";
+import MagicPenSvg from "@/assets/svgs/MagicPen";
+import MapSvg from "@/assets/svgs/Map";
+
+import Line1 from "@/assets/svgs/Line1";
+import Line2 from "@/assets/svgs/Line2";
+import Line3 from "@/assets/svgs/Line3";
+import Line4 from "@/assets/svgs/Line4";
 
 export default function Section1() {
 	return (
-		<section className="w-full min-h-dvh py-32 grid grid-cols-2 grid-rows-2">
-			{/* Hero */}
-			<div className="flex justify-end">
-				<div className="relative w-6/12 aspect-[14/15] me-20 flex flex-col justify-around items-center _text-body-2 text-background-1 font-light">
-					<Image
-						src={PlacehoderImage}
-						alt=""
-						width={500}
-						height={500}
-						className="absolute -z-10 w-full aspect-[4/5] bg-black/50"
-					/>
-					<HeroLabel className="mt-10 self-start">Cepat @</HeroLabel>
-					<HeroLabel className="self-end">Andal @</HeroLabel>
-					<HeroLabel className="self-start">Ramah @</HeroLabel>
-					<HeroLabel className="mb-10 self-end">Terjangkau @</HeroLabel>
+		<section
+			className="w-full min-h-dvh py-32 px-8 sm:px-12 md:px-14 lg:px-16"
+			style={{
+				background: `
+					radial-gradient(circle at 50% -5%, var(--gradient) 0%, transparent 20%),
+					radial-gradient(circle at 90% 40%, var(--gradient) 0%, transparent 20%),
+					radial-gradient(circle at 30% 50%, var(--gradient) 0%, transparent 20%)
+				`
+			}}
+		>
+			<div className="flex flex-col-reverse lg:flex-row items-center gap-2">
+				{/* Hero */}
+				<div className="basis-1/2 flex justify-center lg:justify-end">
+					<div className="relative max-w-sm me-0 md:me-[15%] flex flex-col justify-around items-center _text-body-2 text-background-1 font-light">
+						<Image
+							src={HeroImage}
+							alt=""
+							priority
+							width={1000}
+							height={1000}
+							className="relative z-0 h-full w-auto object-cover object-center"
+						/>
+						<div className="absolute z-10 top-0 left-0 size-full flex flex-col items-center justify-evenly">
+							<HeroLabel className="self-start">
+								Cepat <FlashSvg className="inline fill-background-1" />
+							</HeroLabel>
+							<HeroLabel className="self-end">
+								Andal <SettingSvg className="inline fill-background-1" />
+							</HeroLabel>
+							<HeroLabel className="self-start">
+								Ramah <ProfileSvg className="inline fill-background-1" />
+							</HeroLabel>
+							<HeroLabel className="self-end">
+								Terjangkau <DiscountSvg className="inline fill-background-1" />
+							</HeroLabel>
+						</div>
+					</div>
 				</div>
-			</div>
 
-			{/* Title */}
-			<div className="flex items-center">
-				<div className="w-9/12">
+				{/* Title */}
+				<div className="basis-1/2 w-12/12 sm:w-11/12 md:w-10/12 flex flex-col items-start justify-center">
 					<h1 className="_text-title-1 leading-tight">
 						PLATFORM TERLENGKAP UNTUK KEBUTUHAN <span className="text-primary-n1">PERAWATAN</span> EV KAMU.
 					</h1>
@@ -36,66 +74,69 @@ export default function Section1() {
 					</p>
 					<Button
 						type="button"
-						className="mt-4 mb-8 shadow-md dark:border-2 border-foreground-1/50 _text-body-2 font-semibold tracking-wide text-primary-n1"
+						className="my-4 shadow-md dark:border-2 border-foreground-1/50 _text-body-2 font-semibold tracking-wide text-primary-n1"
 					>
-						@ Explore Now!
+						<ForwardSvg className="inline fill-primary-n1" /> Explore Now!
 					</Button>
 				</div>
 			</div>
 
 			{/* Mockup */}
-			<div className="col-span-2 h-fit flex items-center justify-center">
-				<div className="relative w-5/12">
+			<div className="mt-20 md:mt-10 lg:mt-0 flex items-center justify-center">
+				<div className="relative w-11/12 sm:w-9/12 md:w-7/12 lg:w-5/12">
 					{/* Mockup Wrapper */}
 					<div className="relative w-full overflow-clip flex items-center justify-center">
 						<Image
-							src={PlacehoderImage}
+							src={Mockup2Image}
 							alt=""
-							width={500}
-							height={1000}
-							className="absolute top-14 left-0 z-0 w-5/12 aspect-[1/2] rounded-2xl object-cover object-center"
+							width={600}
+							height={800}
+							className="absolute top-14 left-0 z-0 w-5/12 aspect-[1/2] object-contain object-top"
 						/>
 						<Image
-							src={PlacehoderImage}
+							src={Mockup1Image}
 							alt=""
-							width={500}
-							height={1000}
-							className="relative z-10 top-4 w-5/12 aspect-[4/7] rounded-2xl object-cover object-center"
+							width={600}
+							height={800}
+							className="relative z-10 top-4 w-5/12 aspect-[4/7] object-contain object-top"
 						/>
 						<Image
-							src={PlacehoderImage}
+							src={Mockup3Image}
 							alt=""
-							width={500}
-							height={1000}
-							className="absolute top-14 right-0 z-0 w-5/12 aspect-[1/2] rounded-2xl object-cover object-center"
+							width={600}
+							height={800}
+							className="absolute top-12 right-0 z-0 w-5/12 aspect-[1/2] object-contain object-top"
 						/>
 					</div>
 
-					<div className="absolute top-[15%] left-0 -translate-x-full z-20 flex items-center">
-						<div className="w-44 p-4 rounded-2xl shadow-md dark:border-2 border-foreground-1/50 bg-background-1 text-primary-n1 _text-body-2 leading-tight">
-							<span>@</span>
+					<div className="absolute top-0 left-0 -translate-x-1/8 -translate-y-3/4 md:top-[15%] md:left-0 md:-translate-x-full md:translate-y-0 z-20 flex items-center">
+						<div className="w-36 sm:w-40 md:w-44 p-4 rounded-2xl shadow-md dark:border-2 border-foreground-1/50 bg-background-1 text-primary-n1 _text-body-2 leading-tight">
+							<SettingSvg className="fill-primary-n1 mb-1" />
 							<p>Teknisi profesional siap siaga untuk bantu kamu.</p>
 						</div>
-						<div className="w-fit">----------------------</div>
+						<Line1 className="w-[5vw] hidden lg:block" />
 					</div>
-					<div className="absolute bottom-[15%] left-0 -translate-x-full z-20 flex items-center">
-						<div className="w-44 p-4 rounded-2xl shadow-md dark:border-2 border-foreground-1/50 bg-primary-n2 text-background-1 _text-body-2 leading-tight">
-							<span>@</span>
+
+					<div className="absolute bottom-0 left-0 -translate-x-1/8 translate-y-full md:bottom-0 md:left-0 md:-translate-x-full md:translate-y-0 z-20 flex items-center">
+						<div className="w-36 sm:w-40 md:w-44 p-4 rounded-2xl shadow-md dark:border-2 border-foreground-1/50 bg-primary-n1 text-background-1 _text-body-2 leading-tight">
+							<MedalStarSvg className="fill-background-1 mb-1" />
 							<p>Jaminan kualitas dengan suku cadang ORI.</p>
 						</div>
-						<div className="w-fit">-----------------</div>
+						<Line2 className="w-[5vw] hidden lg:block" />
 					</div>
-					<div className="absolute top-[-3%] right-[29%] translate-x-full z-20 flex items-center">
-						<div className="h-fit w-max">----------------------------------------</div>
-						<div className="w-44 p-4 rounded-2xl shadow-md dark:border-2 border-foreground-1/50 bg-primary-n2 text-background-1 _text-body-2 leading-tight">
-							<span>@</span>
+
+					<div className="absolute top-0 right-0 translate-x-1/8 -translate-y-3/4 md:top-[-3%] md:right-[29%] md:translate-x-full md:translate-y-0 z-20 flex items-center">
+						<Line3 className="w-[14vw] hidden lg:block" />
+						<div className="w-36 sm:w-40 md:w-44 p-4 rounded-2xl shadow-md dark:border-2 border-foreground-1/50 bg-primary-n1 text-background-1 _text-body-2 leading-tight">
+							<MagicPenSvg className="fill-background-1 mb-1" />
 							<p>Nikmati berbagai kemudahan dalam satu platform.</p>
 						</div>
 					</div>
-					<div className="absolute bottom-[20%] right-0 translate-x-full z-20 flex items-center">
-						<div className="h-fit w-max">---------------------</div>
-						<div className="w-44 p-4 rounded-2xl shadow-md dark:border-2 border-foreground-1/50 bg-background-1 text-primary-n1 _text-body-2 leading-tight">
-							<span>@</span>
+
+					<div className="absolute bottom-0 right-0 translate-x-1/8 translate-y-full md:bottom-[10%] md:right-0 md:translate-x-full md:translate-y-0 z-20 flex items-center">
+						<Line4 className="w-[7vw] hidden lg:block" />
+						<div className="w-36 sm:w-40 md:w-44 p-4 rounded-2xl shadow-md dark:border-2 border-foreground-1/50 bg-background-1 text-primary-n1 _text-body-2 leading-tight">
+							<MapSvg className="fill-primary-n1 mb-1" />
 							<p>Pelacakan real-time siap bantu kamu setiap saat.</p>
 						</div>
 					</div>
@@ -107,7 +148,7 @@ export default function Section1() {
 
 function HeroLabel({ children, ...props }) {
 	return (
-		<span {...props} className={`px-4 py-2 rounded-2xl backdrop-blur-xs bg-primary-n1/50 ${props.className}`}>
+		<span {...props} className={`px-4 py-2 rounded-2xl backdrop-blur-xs bg-primary-n2/50 ${props.className}`}>
 			{children}
 		</span>
 	);

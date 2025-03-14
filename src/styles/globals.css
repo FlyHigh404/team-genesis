@@ -1,28 +1,44 @@
 @import "tailwindcss";
 
+/* Set Style */
 :root {
-	--background-1: #fcfcfc;
+	[data-theme="light"] {
+		--background-1: #fcfcfc;
 
-	--foreground-1: #1c1c1c;
-	--foreground-2: #6d706e;
+		--foreground-1: #1c1c1c;
+		--foreground-2: #6d706e;
 
-	--primary-light-1: #e6faf4;
-	--primary-light-2: #d9f7ef;
-	--primary-light-3: #b0eede;
-	--primary-normal-1: #01c994;
-	--primary-normal-2: #01b585;
-	--primary-normal-3: #01a176;
-	--primary-dark-1: #01976f;
-	--primary-dark-2: #017959;
-	--primary-dark-3: #005a43;
-	--primary-darker-1: #004634;
-}
+		--primary-light-1: #e6faf4;
+		--primary-light-2: #d9f7ef;
+		--primary-light-3: #b0eede;
+		--primary-normal-1: #01c994;
+		--primary-normal-2: #01b585;
+		--primary-normal-3: #01a176;
+		--primary-dark-1: #01976f;
+		--primary-dark-2: #017959;
+		--primary-dark-3: #005a43;
+		--primary-darker-1: #004634;
+	}
 
-[data-theme="dark"] {
-	--background-1: #1c1c1c;
-	--foreground-1: #fcfcfc;
+	[data-theme="dark"] {
+		--background-1: #1c1c1c;
+		--foreground-1: #fcfcfc;
 
-	--foreground-2: #d9d9d9;
+		--foreground-2: #d9d9d9;
+
+		--primary-light-1: #e6faf4;
+		--primary-light-2: #d9f7ef;
+		--primary-light-3: #b0eede;
+		--primary-normal-1: #01c994;
+		--primary-normal-2: #01b585;
+		--primary-normal-3: #01a176;
+		--primary-dark-1: #01976f;
+		--primary-dark-2: #017959;
+		--primary-dark-3: #005a43;
+		--primary-darker-1: #004634;
+	}
+
+	--gradient: #01c99445;
 }
 
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
@@ -53,17 +69,17 @@ body {
 	background: var(--background-1);
 	color: var(--foreground-1);
 	font-family: Arial, Helvetica, sans-serif;
-}
 
-._text-title-1 {
-	@apply font-semibold text-[32px] lg:text-[42px] text-foreground-1;
-}
-._text-body-1 {
-	@apply text-[18px] lg:text-[20px];
-}
-._text-body-2 {
-	@apply text-[16px] lg:text-[16px];
-}
-._text-body-3 {
-	@apply text-[14px] lg:text-[14px];
+	._text-title-1 {
+		@apply font-semibold text-[30px] sm:text-[32px] md:text-[42px] text-foreground-1;
+	}
+	._text-body-1 {
+		@apply text-[16px] sm:text-[18px] md:text-[20px];
+	}
+	._text-body-2 {
+		@apply text-[12px] sm:text-[14px] md:text-[16px];
+	}
+	._text-body-3 {
+		@apply text-[10px] sm:text-[12px] md:text-[14px];
+	}
 }
