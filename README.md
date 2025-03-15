@@ -12,20 +12,21 @@
 
 ### Alur Kerja Kontribusi
 
-1. Pastikan berada di branch main `git branch` contoh output `main *` (branch aktif terdapat ` *`)
-2. Sinkronisasi perubahan di main `git pull origin main`
-3. Buat branch baru `git switch -c <nama-branch>` contoh: `git switch -c section-1`
-4. Pastikan berada di branch baru `git branch` contoh output `section-1 *` (branch aktif terdapat ` *`)
-5. Lakukan perubahan pada kode
-6. Commit & push
+- Pastikan berada di branch main `git branch` contoh output `main *` (branch aktif terdapat ` *`)
+- Sinkronisasi perubahan di main `git pull origin main`
+- Sinknroniasi branch `git fetch --prune`
+- Buat branch baru `git switch -c <nama-branch>` contoh: `git switch -c section-1`
+- Pastikan berada di branch baru `git branch` contoh output `section-1 *` (branch aktif terdapat ` *`)
+- Lakukan perubahan pada kode
+- Commit & push
 
-- `git add .`
-- `git commit -m "<pesan commit>"` contoh: `git commit -m "add first section"`
-- `git push origin <nama-branch>`
-- `git log -5 --oneline --graph` (Optional) untuk verifikasi push
+1. `git add .`
+2. `git commit -m "<pesan commit>"` contoh: `git commit -m "add first section"`
+3. `git push origin <nama-branch>`
+4. `git log -5 --oneline --graph` (Optional) untuk verifikasi push
 
-7. Tunggu di review & merge oleh koordinator
-8. Ulangi proses ini untuk setiap perubahan baru yang ingin dikembangkan
+- Tunggu di review & merge oleh koordinator
+- Ulangi proses ini untuk setiap perubahan baru yang ingin dikembangkan
 
 # Current Task Division
 

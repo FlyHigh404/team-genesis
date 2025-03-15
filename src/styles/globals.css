@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap");
 
 @import "tailwindcss";
 
@@ -21,10 +20,6 @@
 		--primary-dark-2: #017959;
 		--primary-dark-3: #005a43;
 		--primary-darker-1: #004634;
-
-		--icon-service-1: #10d39f;
-		--gradient-service-1: #42d6b1;
-		
 	}
 
 	[data-theme="dark"] {
@@ -43,10 +38,10 @@
 		--primary-dark-2: #017959;
 		--primary-dark-3: #005a43;
 		--primary-darker-1: #004634;
-
-		--icon-service-1: #10d39f;
-		--gradient-service-1: #42d6b1;
 	}
+
+	--icon-service-1: #10d39f;
+	--gradient-service-1: #42d6b1;
 }
 
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
@@ -79,7 +74,7 @@
 body {
 	background: var(--background-1);
 	color: var(--foreground-1);
-	font-family: 'Inter', sans-serif;
+	font-family: "Inter", sans-serif;
 
 	._text-title-1 {
 		@apply font-semibold text-[30px] sm:text-[32px] md:text-[42px] text-foreground-1;
@@ -93,14 +88,19 @@ body {
 	._text-body-3 {
 		@apply text-[10px] sm:text-[12px] md:text-[14px];
 	}
-}
 
-h1, h2, h3, h4, h5, h6 {
-	font-family: 'Space Grotesk', sans-serif;
-}
-.font-space-grotesk {
-	font-family: 'Space Grotesk', sans-serif;
-}
-.bg-radial-gradient {
-	background: radial-gradient(circle, var(--gradient-service-1), var(--primary-normal-2));
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		font-family: "Space Grotesk", sans-serif;
+	}
+	.font-space-grotesk {
+		font-family: "Space Grotesk", sans-serif;
+	}
+	.bg-radial-gradient {
+		background: radial-gradient(circle, var(--gradient-service-1), var(--primary-normal-2));
+	}
 }
