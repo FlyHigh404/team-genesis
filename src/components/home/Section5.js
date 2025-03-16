@@ -28,7 +28,7 @@ export default function Section5() {
 			</div>
 
 			<div className="max-w-5xl mx-auto">
-				<div className="bg-white shadow-lg rounded-3xl sm:rounded-4xl overflow-hidden grid grid-cols-1 md:grid-cols-[65%_35%] pt-6">
+				<div className="shadow-lg rounded-3xl sm:rounded-4xl overflow-hidden grid grid-cols-1 md:grid-cols-[65%_35%]">
 					<div className="p-6 md:p-8lg:p-10 bg-white">
 						<h2 className="text-xl font-bold text-gray-800">Kirimkan Pesan</h2>
 						<form className="mt-4">

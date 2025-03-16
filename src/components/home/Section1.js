@@ -1,5 +1,3 @@
-"use server";
-
 import Image from "next/image";
 import Button from "@/components/atoms/Button";
 
@@ -15,7 +13,7 @@ import DiscountSvg from "@/assets/svgs/DiscountShape";
 import ForwardSvg from "@/assets/svgs/Forward";
 import MedalStarSvg from "@/assets/svgs/MedalStar";
 import MagicPenSvg from "@/assets/svgs/MagicPen";
-import MapSvg from "@/assets/svgs/Map";
+import Map2Svg from "@/assets/svgs/Map2";
 
 import Line1 from "@/assets/svgs/Line1";
 import Line2 from "@/assets/svgs/Line2";
@@ -65,7 +63,7 @@ export default function Section1() {
 
 				{/* Title */}
 				<div className="basis-1/2 w-12/12 sm:w-11/12 md:w-10/12 flex flex-col items-start justify-center">
-					<h1 className="_text-title-1 leading-tight">
+					<h1 className="mb-3 _text-title-1 leading-tight">
 						PLATFORM TERLENGKAP UNTUK KEBUTUHAN <span className="text-primary-n1">PERAWATAN</span> EV KAMU.
 					</h1>
 					<p className="w-10/12 _text-body-1 text-foreground-2 leading-tight tracking-wide block">
@@ -136,7 +134,7 @@ export default function Section1() {
 					<div className="absolute bottom-0 right-0 translate-x-1/8 translate-y-full md:bottom-[10%] md:right-0 md:translate-x-full md:translate-y-0 z-20 flex items-center">
 						<Line4 className="w-[7vw] hidden lg:block" />
 						<div className="w-36 sm:w-40 md:w-44 p-4 rounded-2xl shadow-md dark:border-2 border-foreground-1/50 bg-background-1 text-primary-n1 _text-body-2 leading-tight">
-							<MapSvg className="fill-primary-n1 mb-1" />
+							<Map2Svg className="fill-primary-n1 mb-1" />
 							<p>Pelacakan real-time siap bantu kamu setiap saat.</p>
 						</div>
 					</div>
