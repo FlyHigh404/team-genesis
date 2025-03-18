@@ -3,18 +3,22 @@
 import { useState, useEffect } from "react";
 
 export default function useLocalStorage(key, initialValue) {
-	const [storedValue, setStoredValue] = useState(() => {
-		if (typeof window === "undefined") {
-			return initialValue;
+	const [storedValue, setStoredValue] = useState(initialValue);
+	const [hasMounted, setHasMounted] = useState(false);
+
+	useEffect(() => {
+		setHasMounted(true);
+		if (typeof window !== "undefined") {
+			try {
+				const item = window.localStorage.getItem(key);
+				if (item !== null) {
+					setStoredValue(JSON.parse(item));
+				}
+			} catch (error) {
+				console.error(`_useLocalStorage_ Error getting localStorage key "${key}":`, error);
+			}
 		}
-		try {
-			const item = window.localStorage.getItem(key);
-			return item ? JSON.parse(item) : initialValue;
-		} catch (error) {
-			console.error(`_useLocalStorage_ Error get localStorage key "${key}":`, error);
-			return initialValue;
-		}
-	});
+	}, [key]);
 
 	const setValue = (value) => {
 		try {
@@ -24,22 +28,9 @@ export default function useLocalStorage(key, initialValue) {
 				window.localStorage.setItem(key, JSON.stringify(valueToStore));
 			}
 		} catch (error) {
-			console.error(`_useLocalStorage_ Error set localStorage key "${key}":`, error);
+			console.error(`_useLocalStorage_ Error setting localStorage key "${key}":`, error);
 		}
 	};
 
-	useEffect(() => {
-		if (typeof window !== "undefined") {
-			try {
-				const item = window.localStorage.getItem(key);
-				if (item) {
-					setStoredValue(JSON.parse(item));
-				}
-			} catch (error) {
-				console.error(`_useLocalStorage_ Error get localStorage key "${key}": `, error);
-			}
-		}
-	}, [key]);
-
-	return [storedValue, setValue];
+	return [hasMounted ? storedValue : initialValue, setValue];
 }

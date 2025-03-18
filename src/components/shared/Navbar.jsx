@@ -1,6 +1,11 @@
+"use client";
+
 import Link from "next/link";
 import Button from "@/components/atoms/Button";
 import useTheme from "@/hooks/useTheme";
+import BetulinSvg from "@/assets/svgs/Betulin";
+import Moon from "@/assets/svgs/Moon";
+import Sun1 from "@/assets/svgs/Sun1";
 
 const navigations = {
 	["Home"]: "/",
@@ -12,12 +17,12 @@ const navigations = {
 export default function Navbar({ active = "Home" }) {
 	if (!(active in navigations)) throw new Error(`_Navbar_ active parameter "${active}" not included in navigations`);
 
-	const [_, toggleTheme] = useTheme();
+	const [theme, toggleTheme] = useTheme();
 
 	return (
 		<header className="fixed z-50 w-full p-4 bg-background-1/50 backdrop-blur-sm flex items-center justify-evenly gap-4">
 			<div className="flex-1 flex justify-center">
-				<span className="text-3xl font-bold text-primary-d2">BETULIN</span>
+				<BetulinSvg className="fill-primary-d2 stroke-primary-d2" />
 			</div>
 			<nav className="flex-1/12 px-8 tracking-wider text-foreground-1 _text-body-2 flex justify-evenly gap-4">
 				{Object.keys(navigations).map((nav) => (
@@ -38,8 +43,12 @@ export default function Navbar({ active = "Home" }) {
 				<Button type="button" className="bg-primary-n1 font-bold _text-body-2 text-background-1">
 					Contact Us
 				</Button>
-				<Button onClick={toggleTheme} type="button" className="bg-neutral-500/15 text-primary-n1">
-					@
+				<Button variant="icon" onClick={toggleTheme} type="button" className="bg-neutral-500/15 text-primary-n1">
+					{theme === "light" ? (
+						<Moon className="size-6 fill-primary-n1" />
+					) : (
+						<Sun1 className="size-6 fill-primary-n1" />
+					)}
 				</Button>
 			</div>
 		</header>
