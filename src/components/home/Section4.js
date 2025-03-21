@@ -33,34 +33,26 @@ const reviews = [
       "Mekaniknya sangat profesional dan paham betul tentang motor listrik...",
     image: UserImage,
   },
-  {
-    id: 4,
-    name: "Rendi Panca",
-    time: "1 minggu lalu",
-    rating: 5,
-    review:
-      "Mekaniknya sangat profesional dan paham betul tentang motor listrik...",
-    images: UserImage,
-  },
 ];
 
 export default function Section4() {
   const [startIndex, setStartIndex] = useState(0);
 
   const nextReview = () => {
-    if (startIndex < reviews.length - 3) {
-      setStartIndex(startIndex + 1);
-    }
+    setStartIndex((prevIndex) => (prevIndex + 1) % reviews.length);
   };
 
   const prevReview = () => {
-    if (startIndex > 0) {
-      setStartIndex(startIndex - 1);
-    }
+    setStartIndex(
+      (prevIndex) => (prevIndex - 1 + reviews.length) % reviews.length
+    );
   };
 
   return (
-    <section className="bg-gray-50 py-16 px-6 md:px-16 flex flex-col justify-center md:flex-row items-center gap-8" id="testimonials">
+    <section
+      className="bg-gray-50 py-16 px-6 md:px-16 flex flex-col justify-center md:flex-row items-center gap-8"
+      id="testimonials"
+    >
       {/* Bagian Kiri - Judul dan Deskripsi */}
       <div className="max-w-lg mx-auto md:mx-0 flex flex-col items-center md:items-start gap-6">
         {/* Deskripsi dan Judul */}
@@ -105,17 +97,17 @@ export default function Section4() {
             {/* Card Container */}
             <div className="flex flex-col gap-3 transition-all duration-300">
               {reviews
-                .slice(startIndex, startIndex + 3)
+                .map((_, i) => reviews[(startIndex + i) % reviews.length]) // Loop secara infinite
+                .slice(0, 3)
                 .map((review, index) => (
                   <div
                     key={review.id}
                     className={`relative rounded-2xl p-4 shadow-md transition-all duration-300 ${
                       index === 1
-                        ? "scale-105 shadow-lg bg-icon-service-1 "
-                        : "bg-white scale-100"
+                        ? "scale-105 shadow-lg bg-icon-service-1 text-white"
+                        : "bg-white scale-100 text-gray-900"
                     }`}
                   >
-                    {/* Foto di Pojok Kiri Atas */}
                     <Image
                       src={UserImage}
                       alt={review.name}
@@ -125,28 +117,34 @@ export default function Section4() {
                     />
                     <div className="ml-14">
                       <h4 className="font-semibold">{review.name}</h4>
-                      <span className="text-xs text-gray-500">
+                      <span
+                        className={`text-xs ${
+                          index === 1 ? "text-gray-200" : "text-gray-500"
+                        }`}
+                      >
                         {review.time}
                       </span>
                     </div>
-
-                    <div className="flex justify-between items-center mb-2">
-                      <h4 className="font-semibold">{review.name}</h4>
-                      <span className="text-xs text-gray-500">
-                        {review.time}
-                      </span>
-                    </div>
-                    {/* Rating */}
                     <div className="flex gap-1 mb-2">
                       {Array.from({ length: review.rating }).map((_, i) => (
                         <Star
                           key={i}
                           size={16}
-                          className="text-yellow-500 fill-yellow-500"
+                          className={`${
+                            index === 1
+                              ? "text-yellow-300 fill-yellow-300"
+                              : "text-yellow-500 fill-yellow-500"
+                          }`}
                         />
                       ))}
                     </div>
-                    <p className="text-gray-600 text-sm">{review.review}</p>
+                    <p
+                      className={`${
+                        index === 1 ? "text-white" : "text-gray-600"
+                      } text-sm`}
+                    >
+                      {review.review}
+                    </p>
                   </div>
                 ))}
             </div>
