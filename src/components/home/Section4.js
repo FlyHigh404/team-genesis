@@ -61,7 +61,7 @@ export default function Section4() {
 
   return (
     <section
-      className="bg-gray-50 py-16 px-6 md:px-16 flex flex-col justify-center md:flex-row items-center gap-8"
+      className="bg-primary-l1/50 dark:bg-primary-d4/50 py-16 px-6 md:px-16 flex flex-col justify-center md:flex-row items-center gap-8"
       id="testimonials"
     >
       {/* Bagian Kiri - Judul dan Deskripsi */}
@@ -71,17 +71,17 @@ export default function Section4() {
           {/* Garis dan teks gradient */}
           <div className="flex items-center gap-3">
             <div className="w-16 h-[2px] bg-primary-n1"></div>
-            <p className="text-lg font-semibold bg-gradient-to-r from-[#01c994] to-black bg-clip-text text-transparent">
+            <p className="text-lg font-semibold bg-gradient-to-r from-[#01c994] to-foreground-1 bg-clip-text text-transparent">
               What do they think?
             </p>
           </div>
 
           {/* Judul dan Deskripsi */}
-          <h2 className="text-3xl font-bold text-gray-900 mt-2">
+          <h2 className="text-3xl font-bold text-foreground-1 mt-2">
             ULASAN DARI MEREKA YANG SUDAH PUAS LEBIH DULU KARENA{" "}
             <span className="text-primary-n1">PAKAI BETULIN</span>
           </h2>
-          <p className="text-gray-600 mt-4">
+          <p className="text-foreground-2 mt-4">
             Kami percaya bahwa kepuasan pengguna adalah ukuran keberhasilan
             kami. Betulin membantu pemilik kendaraan listrik dalam mengatasi
             tantangan sehari-hari.
