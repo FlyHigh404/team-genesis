@@ -109,7 +109,7 @@ const serviceList = [
 
 export default function Section3() {
 	return (
-		<section className="w-full min-h-dvh py-32 px-8 max-w-7xl sm:px-12 md:px-14 lg:px-16 mx-auto">
+		<section className="w-full min-h-dvh py-32 px-8 max-w-7xl sm:px-12 md:px-14 lg:px-16 mx-auto" id="services">
 			<div className="text-center mb-8">
 				<p className="bg-gradient-to-r font-medium from-primary-n1 to-foreground-1 text-transparent bg-clip-text mb-2 _text-body-1">
 					Solusi Lengkap di Ujung Jari Anda

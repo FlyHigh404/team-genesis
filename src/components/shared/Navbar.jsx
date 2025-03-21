@@ -8,10 +8,10 @@ import Moon from "@/assets/svgs/Moon";
 import Sun1 from "@/assets/svgs/Sun1";
 
 const navigations = {
-	["Home"]: "/",
-	["About Us"]: "/about",
-	["Services"]: "/services",
-	["Testimonials"]: "/testimonials"
+	["Home"]: "#home",
+	["About Us"]: "#about",
+	["Services"]: "#services",
+	["Testimonials"]: "#testimonials"
 };
 
 export default function Navbar({ active = "Home" }) {
@@ -40,8 +40,8 @@ export default function Navbar({ active = "Home" }) {
 				))}
 			</nav>
 			<div className="flex-1 flex justify-center gap-2">
-				<Button type="button" className="bg-primary-n1 font-bold _text-body-2 text-background-1">
-					Contact Us
+				<Button  className="bg-primary-n1 font-bold _text-body-2 text-background-1">
+					<a href="#contact">Contact Us</a>
 				</Button>
 				<Button variant="icon" onClick={toggleTheme} type="button" className="bg-neutral-500/15 text-primary-n1">
 					{theme === "light" ? (

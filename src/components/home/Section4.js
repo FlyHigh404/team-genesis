@@ -60,7 +60,7 @@ export default function Section4() {
   };
 
   return (
-    <section className="bg-gray-50 py-16 px-6 md:px-16 flex flex-col justify-center md:flex-row items-center gap-8">
+    <section className="bg-gray-50 py-16 px-6 md:px-16 flex flex-col justify-center md:flex-row items-center gap-8" id="testimonials">
       {/* Bagian Kiri - Judul dan Deskripsi */}
       <div className="max-w-lg mx-auto md:mx-0 flex flex-col items-center md:items-start gap-6">
         {/* Deskripsi dan Judul */}

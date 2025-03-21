@@ -30,7 +30,7 @@ export default function Section1() {
 					radial-gradient(circle at 90% 40%, var(--gradient) 0%, transparent 20%),
 					radial-gradient(circle at 30% 50%, var(--gradient) 0%, transparent 20%)
 				`,
-      }}
+      }} id="home" 
     >
       <div className="flex flex-col-reverse lg:flex-row items-center gap-2">
         {/* Hero */}

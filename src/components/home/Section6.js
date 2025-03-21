@@ -3,6 +3,7 @@ import Insta from "@/assets/svgs/Insta";
 import Mail from "@/assets/svgs/Mail";
 import Tiktok from "@/assets/svgs/Tiktok";
 
+
 export default function Section6() {
 	return (
 		<footer className="bg-primary-n1 text-white p-6 md:p-8">
@@ -41,22 +42,22 @@ export default function Section6() {
 						<h3 className="text-lg  md:text-xl mt font-semibold text-white cursor-default">About</h3>
 						<ul className="mt-9 lg:mt-2 md:mt-1.5 space-y-2 md:text-base">
 							<li>
-								<a href="#" className="hover:text-white transition">
+								<a href="#home" className="hover:text-white transition">
 									Home
 								</a>
 							</li>
 							<li>
-								<a href="#" className="hover:text-white transition">
+								<a href="#about" className="hover:text-white transition">
 									About Us
 								</a>
 							</li>
 							<li>
-								<a href="#" className="hover:text-white transition">
+								<a href="#services" className="hover:text-white transition">
 									Services
 								</a>
 							</li>
 							<li>
-								<a href="#" className="hover:text-white transition">
+								<a href="#testimonials" className="hover:text-white transition">
 									Testimonials
 								</a>
 							</li>
