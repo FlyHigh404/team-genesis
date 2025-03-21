@@ -5,6 +5,7 @@ import useTheme from "@/hooks/useTheme";
 import BetulinSvg from "@/assets/svgs/Betulin";
 import Moon from "@/assets/svgs/Moon";
 import Sun1 from "@/assets/svgs/Sun1";
+import { useEffect, useState } from "react";
 
 const navigations = {
 	["Home"]: "#home",
@@ -13,10 +14,24 @@ const navigations = {
 	["Testimonials"]: "#testimonials"
 };
 
-export default function Navbar({ active = "Home" }) {
-	if (!(active in navigations)) throw new Error(`_Navbar_ active parameter "${active}" not included in navigations`);
-
+export default function Navbar() {
 	const [theme, toggleTheme] = useTheme();
+
+	const [active, setActive] = useState("Home");
+	useEffect(() => {
+		const observer = new IntersectionObserver((entries) => {
+			entries.forEach((entry) => {
+				if (entry.isIntersecting) {
+					setActive(entry.target.id);
+				}
+			});
+		});
+		const elements = document.querySelectorAll("section");
+		elements.forEach((element) => observer.observe(element));
+		return () => {
+			elements.forEach((element) => observer.unobserve(element));
+		};
+	}, []);
 
 	const handleClick = (target, e) => {
 		e.preventDefault();
@@ -35,7 +50,7 @@ export default function Navbar({ active = "Home" }) {
 						key={navigations[nav]}
 						onClick={(e) => handleClick(navigations[nav], e)}
 						className={
-							nav === active
+							navigations[nav].slice(1) === active
 								? "relative text-primary-n1 after:absolute after:left-0 after:bottom-0 after:w-full after:h-[3px] after:bg-gradient-to-l after:from-transparent after:via-primary-n1 after:to-transparent cursor-pointer"
 								: "cursor-pointer"
 						}

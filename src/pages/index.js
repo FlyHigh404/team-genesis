@@ -11,7 +11,7 @@ import Section6 from "@/components/home/Section6";
 export default function Home() {
 	return (
 		<>
-			<Navbar active="Home" />
+			<Navbar />
 			<main className="scroll-smooth">
 				<Section1 />
 				<Section2 />
