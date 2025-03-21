@@ -9,17 +9,17 @@ import Section5 from "@/components/home/Section5";
 import Section6 from "@/components/home/Section6";
 
 export default function Home() {
-  return (
-    <>
-      <Navbar active="Home" />
-      <main>
-        <Section1 />
-        <Section2 />
-        <Section3 />
-        <Section4 />
-        <Section5 />
-        <Section6 />
-      </main>
-    </>
-  );
+	return (
+		<>
+			<Navbar active="Home" />
+			<main className="scroll-smooth">
+				<Section1 />
+				<Section2 />
+				<Section3 />
+				<Section4 />
+				<Section5 />
+				<Section6 />
+			</main>
+		</>
+	);
 }

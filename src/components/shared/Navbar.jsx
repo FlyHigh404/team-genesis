@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import Button from "@/components/atoms/Button";
 import useTheme from "@/hooks/useTheme";
 import BetulinSvg from "@/assets/svgs/Betulin";
@@ -19,6 +18,12 @@ export default function Navbar({ active = "Home" }) {
 
 	const [theme, toggleTheme] = useTheme();
 
+	const handleClick = (target, e) => {
+		e.preventDefault();
+		const targetElement = document.querySelector(target);
+		if (targetElement) targetElement.scrollIntoView({ behavior: "smooth" });
+	};
+
 	return (
 		<header className="fixed z-50 w-full p-4 bg-background-1/50 backdrop-blur-sm flex items-center justify-evenly gap-4">
 			<div className="flex-1 flex justify-center">
@@ -26,22 +31,25 @@ export default function Navbar({ active = "Home" }) {
 			</div>
 			<nav className="flex-1/12 px-8 tracking-wider text-foreground-1 _text-body-2 flex justify-evenly gap-4">
 				{Object.keys(navigations).map((nav) => (
-					<Link
+					<button
 						key={navigations[nav]}
-						href={navigations[nav]}
+						onClick={(e) => handleClick(navigations[nav], e)}
 						className={
 							nav === active
-								? "relative text-primary-n1 after:absolute after:left-0 after:bottom-0 after:w-full after:h-[3px] after:bg-gradient-to-l after:from-transparent after:via-primary-n1 after:to-transparent"
-								: ""
+								? "relative text-primary-n1 after:absolute after:left-0 after:bottom-0 after:w-full after:h-[3px] after:bg-gradient-to-l after:from-transparent after:via-primary-n1 after:to-transparent cursor-pointer"
+								: "cursor-pointer"
 						}
 					>
 						{nav}
-					</Link>
+					</button>
 				))}
 			</nav>
 			<div className="flex-1 flex justify-center gap-2">
-				<Button  className="bg-primary-n1 font-bold _text-body-2 text-background-1">
-					<a href="#contact">Contact Us</a>
+				<Button
+					onClick={(e) => handleClick("#contact", e)}
+					className="bg-primary-n1 font-bold _text-body-2 text-background-1"
+				>
+					Contact Us
 				</Button>
 				<Button variant="icon" onClick={toggleTheme} type="button" className="bg-neutral-500/15 text-primary-n1">
 					{theme === "light" ? (
