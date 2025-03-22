@@ -84,7 +84,7 @@ export default function Section4() {
         </div>
       </div>
       <div className="flex flex-col items-center">
-        <div className="flex items-center justify-center min-h-screen">
+        <div className="flex items-center justify-center py-2">
           <div className="relative w-[380px]">
             <div className="flex flex-col gap-3 transition-all duration-300">
               {reviews
