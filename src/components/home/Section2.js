@@ -5,7 +5,7 @@ import AboutUs from "@/assets/images/about-us.png";
 export default function Section2() {
   return (
     <section
-      className="bg-primary-l1/50 dark:bg-primary-d4/50 py-6 px-6 md:px-16 flex flex-col  md:flex-row items-center gap-8 justify-center mt-5"
+      className="bg-primary-l1/50 dark:bg-primary-d4/50 py-6 px-6 sm:mt-36 md:mt-12 md:px-16 lg: flex flex-col  md:flex-row items-center gap-8 justify-center mt-5"
       id="about"
     >
       <div className="max-w-lg text-center md:text-left">
