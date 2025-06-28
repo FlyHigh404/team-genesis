@@ -8,6 +8,7 @@ import Send from '@/assets/svgs/Send'
 import { useState } from 'react'
 import { toast } from 'react-hot-toast'
 
+
 export default function Section5() {
   const [formData, setFormData] = useState({
     first_name: '',
@@ -192,6 +193,7 @@ export default function Section5() {
           </div>
         </div>
       </div>
+
     </section>
   )
 }

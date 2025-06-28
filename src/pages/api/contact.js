@@ -13,11 +13,12 @@ export default async function handler(req, res) {
       return res.status(400).json({ error: 'Missing required fields' })
     }
 
-    const resend = new Resend('ENV=API_KEY')
+    const resend = new Resend(process.env.RESEND_API_KEY)
 
     const { data, error } = await resend.emails.send({
-      from: `Betulin Website <info@mail.prinafsika.world>`,
-      to: '21081010190@student.upnjatim.ac.id',
+      // set domain di resend https://resend.com/
+      from: `Betulin Website <info@email.webinap.com>`,
+      to: 'flyhighsinergi.idn@gmail.com',
       subject: `New Message from ${first_name} ${last_name}`,
       react: EmailTemplate({ email, message, first_name, last_name, phone }),
     })
